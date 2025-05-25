@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "cobblerealisticcombat",
+  "version": "${version}",
+  "name": "CobbleRealisticCombat",
+  "description": "just the cobble trade",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/cobblerealisticcombat/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "top.vrilhyc.mods.cobblerealisticcombat.client.CobbleRealisticCombatDataGenerator"
+    ],
+    "client": [
+      "top.vrilhyc.mods.cobblerealisticcombat.client.CobbleRealisticCombatClient"
+    ],
+    "main": [
+      "top.vrilhyc.mods.cobblerealisticcombat.CobbleRealisticCombat"
+    ]
+  },
+  "mixins": [
+    "cobblerealisticcombat.mixins.json",
+    {
+      "config": "cobblerealisticcombat.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "cobblemon": "*"
+  }
+}
